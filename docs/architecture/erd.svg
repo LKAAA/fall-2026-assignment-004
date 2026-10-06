@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 760" width="100%" height="100%">
+  <defs>
+    <style>
+      .entity-box { fill: #ffffff; stroke: #334155; stroke-width: 1.5; rx: 6px; }
+      .entity-header { fill: #f1f5f9; stroke: #334155; stroke-width: 1.5; }
+      .entity-title { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #0f172a; text-anchor: middle; }
+      .field-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; fill: #1e293b; }
+      .field-type { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; fill: #64748b; }
+      .field-key { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; font-weight: bold; fill: #b45309; }
+      .rel-line { stroke: #475569; stroke-width: 1.5; fill: none; }
+      .rel-text { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 11px; fill: #475569; font-style: italic; }
+      .cardinality { font-family: ui-monospace, monospace; font-size: 12px; fill: #334155; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8fafc" />
+
+  <!-- USERS -->
+  <g id="entity-users" transform="translate(60, 40)">
+    <rect class="entity-box" width="220" height="135" />
+    <path class="entity-header" d="M 0 6 C 0 2.68 2.68 0 6 0 L 214 0 C 217.32 0 220 2.68 220 6 L 220 30 L 0 30 Z" />
+    <text class="entity-title" x="110" y="20">USERS</text>
+    <text class="field-type" x="15" y="52">serial</text><text class="field-text" x="75" y="52">id</text><text class="field-key" x="185" y="52">PK</text>
+    <text class="field-type" x="15" y="74">varchar</text><text class="field-text" x="75" y="74">email</text>
+    <text class="field-type" x="15" y="96">varchar</text><text class="field-text" x="75" y="96">name</text>
+    <text class="field-type" x="15" y="118">timestamp</text><text class="field-text" x="75" y="118">created_at</text>
+  </g>
+
+  <!-- AUTHORS -->
+  <g id="entity-authors" transform="translate(400, 40)">
+    <rect class="entity-box" width="220" height="135" />
+    <path class="entity-header" d="M 0 6 C 0 2.68 2.68 0 6 0 L 214 0 C 217.32 0 220 2.68 220 6 L 220 30 L 0 30 Z" />
+    <text class="entity-title" x="110" y="20">AUTHORS</text>
+    <text class="field-type" x="15" y="52">serial</text><text class="field-text" x="75" y="52">id</text><text class="field-key" x="185" y="52">PK</text>
+    <text class="field-type" x="15" y="74">varchar</text><text class="field-text" x="75" y="74">name</text>
+    <text class="field-type" x="15" y="96">text</text><text class="field-text" x="75" y="96">bio</text>
+    <text class="field-type" x="15" y="118">timestamp</text><text class="field-text" x="75" y="118">created_at</text>
+  </g>
+
+  <!-- GENRES -->
+  <g id="entity-genres" transform="translate(740, 40)">
+    <rect class="entity-box" width="220" height="135" />
+    <path class="entity-header" d="M 0 6 C 0 2.68 2.68 0 6 0 L 214 0 C 217.32 0 220 2.68 220 6 L 220 30 L 0 30 Z" />
+    <text class="entity-title" x="110" y="20">GENRES</text>
+    <text class="field-type" x="15" y="52">serial</text><text class="field-text" x="75" y="52">id</text><text class="field-key" x="185" y="52">PK</text>
+    <text class="field-type" x="15" y="74">varchar</text><text class="field-text" x="75" y="74">name</text>
+    <text class="field-type" x="15" y="96">text</text><text class="field-text" x="75" y="96">description</text>
+    <text class="field-type" x="15" y="118">timestamp</text><text class="field-text" x="75" y="118">created_at</text>
+  </g>
+
+  <!-- BORROWERS -->
+  <g id="entity-borrowers" transform="translate(60, 250)">
+    <rect class="entity-box" width="220" height="180" />
+    <path class="entity-header" d="M 0 6 C 0 2.68 2.68 0 6 0 L 214 0 C 217.32 0 220 2.68 220 6 L 220 30 L 0 30 Z" />
+    <text class="entity-title" x="110" y="20">BORROWERS</text>
+    <text class="field-type" x="15" y="52">serial</text><text class="field-text" x="75" y="52">id</text><text class="field-key" x="185" y="52">PK</text>
+    <text class="field-type" x="15" y="74">integer</text><text class="field-text" x="75" y="74">user_id</text><text class="field-key" x="185" y="74">FK</text>
+    <text class="field-type" x="15" y="96">varchar</text><text class="field-text" x="75" y="96">card_number</text>
+    <text class="field-type" x="15" y="118">varchar</text><text class="field-text" x="75" y="118">phone</text>
+    <text class="field-type" x="15" y="140">varchar</text><text class="field-text" x="75" y="140">status</text>
+    <text class="field-type" x="15" y="162">timestamp</text><text class="field-text" x="75" y="162">created_at</text>
+  </g>
+
+  <!-- BOOKS -->
+  <g id="entity-books" transform="translate(560, 240)">
+    <rect class="entity-box" width="260" height="250" />
+    <path class="entity-header" d="M 0 6 C 0 2.68 2.68 0 6 0 L 254 0 C 257.32 0 260 2.68 260 6 L 260 30 L 0 30 Z" />
+    <text class="entity-title" x="130" y="20">BOOKS</text>
+    <text class="field-type" x="15" y="52">serial</text><text class="field-text" x="110" y="52">id</text><text class="field-key" x="225" y="52">PK</text>
+    <text class="field-type" x="15" y="74">integer</text><text class="field-text" x="110" y="74">author_id</text><text class="field-key" x="225" y="74">FK</text>
+    <text class="field-type" x="15" y="96">integer</text><text class="field-text" x="110" y="96">genre_id</text><text class="field-key" x="225" y="96">FK</text>
+    <text class="field-type" x="15" y="118">varchar</text><text class="field-text" x="110" y="118">isbn</text>
+    <text class="field-type" x="15" y="140">varchar</text><text class="field-text" x="110" y="140">title</text>
+    <text class="field-type" x="15" y="162">text</text><text class="field-text" x="110" y="162">description</text>
+    <text class="field-type" x="15" y="184">integer</text><text class="field-text" x="110" y="184">publication_year</text>
+    <text class="field-type" x="15" y="206">integer</text><text class="field-text" x="110" y="206">total_copies</text>
+    <text class="field-type" x="15" y="228">integer</text><text class="field-text" x="110" y="228">available_copies</text>
+    <text class="field-type" x="15" y="246">timestamp</text><text class="field-text" x="110" y="246">created_at</text>
+  </g>
+
+  <!-- LOANS -->
+  <g id="entity-loans" transform="translate(300, 520)">
+    <rect class="entity-box" width="250" height="210" />
+    <path class="entity-header" d="M 0 6 C 0 2.68 2.68 0 6 0 L 244 0 C 247.32 0 250 2.68 250 6 L 250 30 L 0 30 Z" />
+    <text class="entity-title" x="125" y="20">LOANS</text>
+    <text class="field-type" x="15" y="52">serial</text><text class="field-text" x="100" y="52">id</text><text class="field-key" x="215" y="52">PK</text>
+    <text class="field-type" x="15" y="74">integer</text><text class="field-text" x="100" y="74">book_id</text><text class="field-key" x="215" y="74">FK</text>
+    <text class="field-type" x="15" y="96">integer</text><text class="field-text" x="100" y="96">borrower_id</text><text class="field-key" x="215" y="96">FK</text>
+    <text class="field-type" x="15" y="118">timestamp</text><text class="field-text" x="100" y="118">loan_date</text>
+    <text class="field-type" x="15" y="140">timestamp</text><text class="field-text" x="100" y="140">due_date</text>
+    <text class="field-type" x="15" y="162">timestamp</text><text class="field-text" x="100" y="162">return_date</text>
+    <text class="field-type" x="15" y="184">varchar</text><text class="field-text" x="100" y="184">status</text>
+    <text class="field-type" x="15" y="202">timestamp</text><text class="field-text" x="100" y="202">created_at</text>
+  </g>
+
+  <!-- Relationships -->
+  <!-- USERS to BORROWERS -->
+  <line class="rel-line" x1="170" y1="175" x2="170" y2="250" />
+  <text class="rel-text" x="175" y="215">has (1:0..1)</text>
+
+  <!-- AUTHORS to BOOKS -->
+  <path class="rel-line" d="M 510 175 L 510 210 L 630 210 L 630 240" />
+  <text class="rel-text" x="530" y="205">writes (1:N)</text>
+
+  <!-- GENRES to BOOKS -->
+  <path class="rel-line" d="M 850 175 L 850 210 L 760 210 L 760 240" />
+  <text class="rel-text" x="770" y="205">categorizes (1:N)</text>
+
+  <!-- BORROWERS to LOANS -->
+  <path class="rel-line" d="M 170 430 L 170 610 L 300 610" />
+  <text class="rel-text" x="180" y="550">initiates (1:N)</text>
+
+  <!-- BOOKS to LOANS -->
+  <path class="rel-line" d="M 690 490 L 690 610 L 550 610" />
+  <text class="rel-text" x="600" y="580">borrowed_in (1:N)</text>
+</svg>
